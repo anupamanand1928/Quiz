@@ -8,7 +8,7 @@ import android.view.WindowManager;
 
 
 public class Splash extends AppCompatActivity {
-    private int SLEEP_TIMER = 3;
+    private int SLEEP_TIMER = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class Splash extends AppCompatActivity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Intent intent = new Intent(Splash.this, MainActivity.class);
+            Intent intent = new Intent(Splash.this, Start.class);
             startActivity(intent);
             Splash.this.finish();
         }

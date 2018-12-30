@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mScoreView;
     private TextView mQuestion;
+    private TextView mQuestionView;
 
     private Button mButtonChoice1,mButtonChoice2,mButtonChoice3,mButtonChoice4;
 
-    private int mScore;
+    private int mScore,qNumber = 1;
     private int mQuestionNumber = 0;
     private String mAnswer;
 
@@ -28,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().hide();
         mScoreView = (TextView)findViewById(R.id.score);
         mQuestion = (TextView)findViewById(R.id.question);
+        mQuestionView = (TextView)findViewById(R.id.questionnumber);
 
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
@@ -43,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mButtonChoice1.getText().equals(mAnswer)){
-                    mScore = mScore + 1;
+                    mScore = mScore + 10;
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
                 }else {
                     updateQuestion();
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                 }
             }
         });
@@ -56,11 +62,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mButtonChoice2.getText().equals(mAnswer)){
-                    mScore = mScore + 1;
+                    mScore = mScore + 10;
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
                 }else {
                     updateQuestion();
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                 }
             }
         });
@@ -69,11 +79,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mButtonChoice3.getText().equals(mAnswer)){
-                    mScore = mScore + 1;
+                    mScore = mScore + 10;
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
                 }else {
                     updateQuestion();
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                 }
             }
         });
@@ -82,11 +96,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mButtonChoice4.getText().equals(mAnswer)){
-                    mScore = mScore + 1;
+                    mScore = mScore + 10;
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
                 }else {
                     updateQuestion();
+                    qNumber = qNumber + 1;
+                    updateQuestionNumber(qNumber);
                 }
             }
         });
@@ -94,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateScore(int score){
         mScoreView.setText("" + mScore);
+    }
+
+    private void updateQuestionNumber(int score){
+        mQuestionView.setText("" + qNumber);
     }
 
     public void updateQuestion() {

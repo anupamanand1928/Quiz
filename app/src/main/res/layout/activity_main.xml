@@ -4,89 +4,119 @@
     android:id="@+id/activity_quiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     android:orientation="vertical"
     tools:context="com.example.anupam.quiz.MainActivity">
 
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        android:background="@color/googleBlue">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/questions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Question"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Score"
-            android:textSize="20sp"
-            android:layout_alignParentLeft="true"
-            android:id="@+id/score_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/questionnumber"
+                android:layout_alignParentLeft="true"
+                android:padding="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="90dp"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/score"
-            android:layout_alignParentRight="true"
-            android:text="0"
-            android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/score_text"/>
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:id="@+id/score"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="What is the square root of 25?"
+        android:text=""
+        android:gravity="center_horizontal"
         android:textSize="20sp"
         android:padding="8dp"
-        android:layout_marginBottom="40dp"
+        android:textColor="@color/googleYellow"
+        android:layout_marginBottom="60dp"
         android:id="@+id/question"/>
 
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="5"
-        android:background="#0091EA"
-        android:textColor="#fff"
+        android:text=""
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/googleGreen"
         android:layout_marginBottom="24dp"
         android:id="@+id/choice1"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="6"
-        android:background="#0091EA"
-        android:textColor="#fff"
+        android:text=""
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/googleRed"
         android:layout_marginBottom="24dp"
         android:id="@+id/choice2"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="7"
-        android:background="#0091EA"
-        android:textColor="#fff"
+        android:text=""
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/googleBlue"
         android:layout_marginBottom="24dp"
         android:id="@+id/choice3"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="8"
-        android:background="#0091EA"
-        android:textColor="#fff"
+        android:text=""
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/googleYellow"
         android:layout_marginBottom="24dp"
         android:id="@+id/choice4"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="quit"
-        android:background="#B71C1C"
-        android:textColor="#fff"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/quit"/>
+    </LinearLayout>
 
 </LinearLayout>
