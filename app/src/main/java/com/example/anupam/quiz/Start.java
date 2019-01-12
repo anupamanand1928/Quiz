@@ -26,6 +26,7 @@ public class Start extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Start.this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
 
@@ -34,6 +35,7 @@ public class Start extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Start.this, Settings.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
 
@@ -42,6 +44,7 @@ public class Start extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Start.this, Rate.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
 

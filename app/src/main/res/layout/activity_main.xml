@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_quiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +20,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:padding="20dp"
+                android:paddingTop="20dp"
+                android:paddingRight="10dp"
                 android:layout_marginTop="5dp"
                 android:text="Question"
                 android:textColor="@color/white"
@@ -29,24 +31,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/questionnumber"
-                android:layout_alignParentLeft="true"
-                android:padding="20dp"
+                android:layout_toRightOf="@id/questions"
+                android:paddingTop="20dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="90dp"
                 android:text="1"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/questionnumberoutof"
+                android:layout_toRightOf="@id/questionnumber"
+                android:paddingTop="20dp"
+                android:layout_marginTop="5dp"
+                android:text="/10"
                 android:textColor="@color/white"
                 android:textSize="20sp"/>
 
             <TextView
+                android:id="@+id/text_view_countdown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Score"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:textSize="30sp"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/score_text"/>
+                android:text="00:10"
+                android:layout_alignParentRight="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +70,8 @@
                 android:layout_marginTop="15dp"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:visibility = "gone" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -81,8 +94,7 @@
         android:textColor="@color/googleYellow"
         android:layout_marginBottom="60dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/question"/>
-
+        android:id="@+id/question" />
 
     <Button
         android:layout_width="match_parent"
@@ -91,7 +103,7 @@
         android:background="@drawable/buttonstyle"
         android:textColor="@color/googleGreen"
         android:layout_marginBottom="24dp"
-        android:id="@+id/choice1"/>
+        android:id="@+id/choice1" />
 
     <Button
         android:layout_width="match_parent"
@@ -100,7 +112,7 @@
         android:background="@drawable/buttonstyle"
         android:textColor="@color/googleRed"
         android:layout_marginBottom="24dp"
-        android:id="@+id/choice2"/>
+        android:id="@+id/choice2" />
 
     <Button
         android:layout_width="match_parent"
@@ -109,7 +121,7 @@
         android:background="@drawable/buttonstyle"
         android:textColor="@color/googleBlue"
         android:layout_marginBottom="24dp"
-        android:id="@+id/choice3"/>
+        android:id="@+id/choice3" />
 
     <Button
         android:layout_width="match_parent"
@@ -118,7 +130,7 @@
         android:background="@drawable/buttonstyle"
         android:textColor="@color/googleYellow"
         android:layout_marginBottom="24dp"
-        android:id="@+id/choice4"/>
+        android:id="@+id/choice4" />
     </LinearLayout>
 
 </LinearLayout>
