@@ -6,8 +6,10 @@
     <color name="colorAccent">#D81B60</color>
     <color name="backgroundcolor">#f0f0f0</color>
     <color name="splashbackgroundcolor">#0b4673</color>
+    <color name="toolbarcolor">#0b182b</color>
     <color name="exitcolor">#B71C1C</color>
     <color name="white">#f0f0f0</color>
+    <color name="clearwhite">#ffffff</color>
     <color name="green">#3bc411</color>
     <color name="googleBlue">#4285F4</color>
     <color name="googleYellow">#F4B400</color>

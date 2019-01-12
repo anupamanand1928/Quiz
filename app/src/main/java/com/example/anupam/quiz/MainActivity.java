@@ -1,15 +1,20 @@
 package com.example.anupam.quiz;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonChoice1,mButtonChoice2,mButtonChoice3,mButtonChoice4;
 
     private int mScore,qNumber = 1;
-    private int mQuestionNumber = 0;
+    private int mQuestionNumber = new Random().nextInt((10 - 0) + 1) + 0;
     private String mAnswer;
 
     private Firebase mQuestionRef,mChoice1Ref,mChoice2Ref,mChoice3Ref,mChoice4Ref,mAnswerRef;
@@ -47,13 +52,16 @@ public class MainActivity extends AppCompatActivity {
                 if(mButtonChoice1.getText().equals(mAnswer)){
                     mScore = mScore + 10;
                     qNumber = qNumber + 1;
+                    Toast.makeText(MainActivity.this, "Correct ", Toast.LENGTH_SHORT).show();
                     updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
+
                 }else {
-                    updateQuestion();
-                    qNumber = qNumber + 1;
-                    updateQuestionNumber(qNumber);
+                    lastQuestion(mScore);
+                }
+                if(qNumber == 11) {
+                    allCorrect();
                 }
             }
         });
@@ -64,13 +72,16 @@ public class MainActivity extends AppCompatActivity {
                 if(mButtonChoice2.getText().equals(mAnswer)){
                     mScore = mScore + 10;
                     qNumber = qNumber + 1;
+                    Toast.makeText(MainActivity.this, "Correct", Toast.LENGTH_SHORT).show();
                     updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
+
                 }else {
-                    updateQuestion();
-                    qNumber = qNumber + 1;
-                    updateQuestionNumber(qNumber);
+                    lastQuestion(mScore);
+                }
+                if(qNumber == 11) {
+                    allCorrect();
                 }
             }
         });
@@ -81,13 +92,15 @@ public class MainActivity extends AppCompatActivity {
                 if(mButtonChoice3.getText().equals(mAnswer)){
                     mScore = mScore + 10;
                     qNumber = qNumber + 1;
+                    Toast.makeText(MainActivity.this, "Correct", Toast.LENGTH_SHORT).show();
                     updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
                 }else {
-                    updateQuestion();
-                    qNumber = qNumber + 1;
-                    updateQuestionNumber(qNumber);
+                    lastQuestion(mScore);
+                }
+                if(qNumber == 11) {
+                    allCorrect();
                 }
             }
         });
@@ -98,16 +111,33 @@ public class MainActivity extends AppCompatActivity {
                 if(mButtonChoice4.getText().equals(mAnswer)){
                     mScore = mScore + 10;
                     qNumber = qNumber + 1;
+                    Toast.makeText(MainActivity.this, "Correct", Toast.LENGTH_SHORT).show();
                     updateQuestionNumber(qNumber);
                     updateScore(mScore);
                     updateQuestion();
                 }else {
-                    updateQuestion();
-                    qNumber = qNumber + 1;
-                    updateQuestionNumber(qNumber);
+                    //Log.d("VALUE OF SCORE", String.valueOf(mScore));
+                    lastQuestion(mScore);
+                }
+                if(qNumber == 11) {
+                    allCorrect();
                 }
             }
         });
+
+    }
+
+    private void lastQuestion(int score){
+        Intent intent = new Intent(MainActivity.this, Score.class);
+        intent.putExtra("Score",score);
+        startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    private void allCorrect(){
+        Intent intent = new Intent(MainActivity.this, Congrats.class);
+        startActivity(intent);
+        MainActivity.this.finish();
     }
 
     private void updateScore(int score){

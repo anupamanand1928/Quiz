@@ -20,9 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Start" />
-        <activity android:name=".Rate" />
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".Start"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Rate"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Score"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Congrats"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

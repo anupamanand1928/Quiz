@@ -4,7 +4,6 @@
     android:id="@+id/activity_quiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
     tools:context="com.example.anupam.quiz.MainActivity">
 
@@ -42,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Score"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
@@ -57,6 +57,7 @@
                 android:layout_marginRight="18dp"
                 android:layout_marginTop="15dp"
                 android:text="0"
+                android:textColor="@color/white"
                 android:textSize="16sp"/>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -79,6 +80,7 @@
         android:padding="8dp"
         android:textColor="@color/googleYellow"
         android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/question"/>
 
 
